@@ -10,7 +10,6 @@ test('test', async ({ page }) => {
   await page.locator('[data-test="password"]').fill('secret_sauce');
   await page.locator('[data-test="password"]').press('Tab');
   await page.locator('[data-test="login-button"]').press('Enter');
-  //await page.locator('[data-test="login-button"]').click();
   await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
   await page.locator('[data-test="remove-sauce-labs-bike-light"]').click();
 });

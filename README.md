@@ -1,6 +1,6 @@
 # playwright-training
 
-** This repository contains end-to-end (E2E) tests for application, using [Playwright](https://saucedemo.com/) **
+** This repository contains end-to-end (E2E) tests for application, using [Playwright](https://playwright.dev/) **
 
 ## Quick Start
 

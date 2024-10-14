@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
+
+//Using test.beforeEach and test.afterEach
 test.describe("Test Suite for Shopping Cart Tests", () => {
-    test.beforeEach("Navigate to Shopping Cart", async({ page }) =>{
+    test.beforeEach("Navigate to webpage", async({ page }) =>{
         await page.goto('/');
     });
 

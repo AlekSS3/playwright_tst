@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Test Suites for e-commerce website', () => {
 
-    test.describe('Test Suite for shopping cart tests', () => {
+    test.describe('Test Suite for Shopping Cart Tests', () => {
 
         test.describe("Test Suite for adding products to cart", () => {
 

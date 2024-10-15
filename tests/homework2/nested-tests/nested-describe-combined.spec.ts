@@ -4,7 +4,7 @@ test.describe('Test Suites for e-commerce website', () => {
 
     test.describe('Test Suite for Shopping Cart Tests', () => {
 
-        test.describe("Test Suite for adding products to cart", () => {
+        test.describe('Test Suite for adding products to cart', () => {
 
             test('Add one product', async ({ page }) => {
             
@@ -15,7 +15,7 @@ test.describe('Test Suites for e-commerce website', () => {
             });
         });
     
-        test.describe("Test Suite for removing products from cart", () => {
+        test.describe('Test Suite for removing products from cart', () => {
     
             test('Remove one product', async ({ page }) => {
             
@@ -25,7 +25,7 @@ test.describe('Test Suites for e-commerce website', () => {
 
     });
 
-    test.describe("Test Suite for Sorting Products Tests", () => {
+    test.describe('Test Suite for Sorting Products Tests', () => {
 
         test.describe("Test Suite for sorting products by name", () => {
     
@@ -38,7 +38,7 @@ test.describe('Test Suites for e-commerce website', () => {
             });
         });
     
-        test.describe("Test Suite for sorting products by price", () => {
+        test.describe('Test Suite for sorting products by price', () => {
     
             test('Sort products from low to high', async ({ page }) => {
             
@@ -50,7 +50,7 @@ test.describe('Test Suites for e-commerce website', () => {
     
         });
     
-        test.describe("Test Suite for sorting products by descending order", () => {
+        test.describe('Test Suite for sorting products by descending order', () => {
     
             test('Sort products by name from A to Z', async ({ page }) => {
             

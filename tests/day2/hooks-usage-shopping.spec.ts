@@ -8,11 +8,11 @@ test.describe("Test Suite for Shopping Cart Tests", () => {
 
     test.describe("Test Suite for addding products to cart", () => {
 
-        test('aadding one product', async ({ page }) => {
+        test('Add one product', async ({ page }) => {
         
         });
 
-        test('adding multiple products', async ({ page }) => {
+        test('Add multiple products', async ({ page }) => {
         
         });
     });

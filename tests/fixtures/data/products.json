@@ -1,0 +1,13 @@
+{
+    "clickAddToCartSecondProduct": "data-test=\"add-to-cart-sauce-labs-bike-light\"",
+    "clickOnCart": "data-test=\"shopping-cart-link\"",
+    "firstName": "Aleksandra",
+    "lastName": "Stefanovska",
+    "postalCode": "1000",
+    "clickCheckout": "data-test=\"checkout\"",
+    "clickContinueButton": "data-test=\"continue\"",
+    "clickFinishButton": "data-test=\"finish\""
+
+
+}
+

@@ -15,8 +15,8 @@ export class LoginPage{
     constructor (page:Page){
         this.page=page;
         this.username=page.getByPlaceholder(login.username);
-        this.password=page.getByTestId(login.password);
-        //this.password = page.locator('[data-test="password"]');
+        //this.password=page.getByTestId(login.password);
+        this.password = page.locator('[data-test="password"]');
         this.loginButton=page.locator(login.loginButton); 
 
     }
@@ -29,8 +29,8 @@ export class LoginPage{
         await this.username.fill(user);
     }
     
-    async typePassword(pass){
-        await this.password.fill(pass);
+    async typePassword(user){
+        await this.password.fill(user);
     }
 
     async clickLoginButton(){
@@ -39,12 +39,15 @@ export class LoginPage{
 
 
     //Method for 1 username/password
-    async standardUserLogin(){
+    async simpleLogin(){
         await this.page.goto('/');
         const user = users[0];
-        await this.username.fill(users[0].username);
-        await this.password.fill(users[0].password);
+        await this.username.fill(user.username);
+        await this.password.fill(user.password);
+        //await this.typeUsername(user.username);
+        //await this.typePassword(user.password);
         await this.loginButton.click();
+    
     }
 
 }

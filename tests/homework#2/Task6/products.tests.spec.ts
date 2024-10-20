@@ -34,7 +34,7 @@ test.describe('Shopping flow tests', () => {
         await productPage.clickContinueButton();
         
 
-    //Assertions to be added
+    //Assertion
     await expect(page.locator('[data-test="shipping-info-value"]')).toHaveText('Free Pony Express Delivery!');
     
 

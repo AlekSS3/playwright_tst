@@ -9,13 +9,15 @@ const login = JSON.parse(fs.readFileSync('../playwright-tst/tests/fixtures/data/
 
 
 test.describe('Shopping flow tests', () => {
+
     test('Add a product to Cart', async ({page}) =>{
         const productPage=new ProductsPage(page);
         const loginPage=new LoginPage(page);
         await loginPage.simpleLogin();
         await productPage.clickAddToCartButton();
     
-    //Assertion to be added
+    //Assertion
+    await expect(page.locator('button[data-test="remove-sauce-labs-backpack"]')).toContainText('Remove');
 
 
     })
@@ -24,18 +26,19 @@ test.describe('Shopping flow tests', () => {
         const productPage=new ProductsPage(page);
         const loginPage=new LoginPage(page);
         await loginPage.simpleLogin();
-        await productPage.clickOnFirstProduct();
-        await productPage.clickAddToCartButton();
+        //await productPage.clickOnFirstProduct();
+        //await productPage.clickAddToCartButton();
         await productPage.clickOnCartButton();
         await productPage.clickCheckoutButton();
         await productPage.typeFirstName();
         await productPage.typeLastName();
         await productPage.typePostalCode();
         await productPage.clickContinueButton();
-        await productPage.clickFinishButton();
+        //await productPage.clickFinishButton();
 
     //Assertions to be added
-
+    await expect(page.locator('[data-test="shipping-info-value"]')).toHaveText('Free Pony Express Delivery!');
+    
 
     });
 
@@ -47,8 +50,8 @@ test.describe('Shopping flow tests', () => {
         await productPage.clickOnCartButton();
         await productPage.clickRemoveProductButton();
 
-    //Assertions to be added
-    //await expect(page.locator('[cart-desc-label"]')).toContainText('Description');
+    //Assertion
+    await expect(page.locator('button[data-test="checkout"]')).toContainText('Checkout');
 
     });
 
@@ -61,9 +64,25 @@ test.describe('Shopping flow tests', () => {
         await productPage.clickRemoveProductButton();
         await productPage.clickContinueShoppingButton();
 
-        //Assertions to be added
+        // Assertion
+        await expect(page.locator('[data-test="title"]')).toContainText('Products');
 
     });
+
+    test('Add product to cart, cancel checkout, and remove product', async ({ page }) =>{
+        const productPage=new ProductsPage(page);
+        const loginPage=new LoginPage(page);
+        await loginPage.simpleLogin();
+        await productPage.clickAddToCartButton();
+        await productPage.clickOnCartButton();
+        await productPage.clickCancelButton;
+        await productPage.clickRemoveProductButton();
+
+
+        //Assertion
+        await expect(page.locator('[data-test="continue-shopping"]')).toContainText('Continue Shopping');
+
+    })
 
 
 

@@ -22,19 +22,17 @@ test.describe('Shopping flow tests', () => {
 
     })
 
-    test('User completes the checkout process successfully', async ({ page }) =>{ 
+    test('User completes checkout process without selecting a product', async ({ page }) =>{ 
         const productPage=new ProductsPage(page);
         const loginPage=new LoginPage(page);
         await loginPage.simpleLogin();
-        //await productPage.clickOnFirstProduct();
-        //await productPage.clickAddToCartButton();
         await productPage.clickOnCartButton();
         await productPage.clickCheckoutButton();
         await productPage.typeFirstName();
         await productPage.typeLastName();
         await productPage.typePostalCode();
         await productPage.clickContinueButton();
-        //await productPage.clickFinishButton();
+        
 
     //Assertions to be added
     await expect(page.locator('[data-test="shipping-info-value"]')).toHaveText('Free Pony Express Delivery!');
@@ -83,10 +81,6 @@ test.describe('Shopping flow tests', () => {
         await expect(page.locator('[data-test="continue-shopping"]')).toContainText('Continue Shopping');
 
     })
-
-
-
-
 
 
 

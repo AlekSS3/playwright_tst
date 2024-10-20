@@ -82,6 +82,22 @@ test.describe('Shopping flow tests', () => {
 
     })
 
+    test('User completes checkout process with selecting a product', async ({ page }) =>{
+        const productPage=new ProductsPage(page);
+        const loginPage=new LoginPage(page);
+        await loginPage.simpleLogin();
+        await productPage.clickAddToCartButton();
+        await productPage.clickOnCartButton();
+        await productPage.clickCheckoutButton();
+        await productPage.typeFirstName();
+        await productPage.typeLastName();
+        await productPage.typePostalCode();
+        await productPage.clickContinueButton();
 
+        //Assertion
+        await expect(page.locator('[data-test="inventory-item-desc"]')).toContainText('carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.');
+
+    });
+    
 
 });

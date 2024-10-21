@@ -32,6 +32,7 @@ test.describe('Shopping flow tests', () => {
         await productPage.typeLastName();
         await productPage.typePostalCode();
         await productPage.clickContinueButton();
+    
         
 
     //Assertion

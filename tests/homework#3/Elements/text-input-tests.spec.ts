@@ -31,7 +31,7 @@ test.describe('Test suite for text input actions', () => {
              //getByPlaceholder
             await page.getByPlaceholder('name@example.com').click();
             await page.getByPlaceholder('name@example.com').fill('astef@mail.com');
-    });
+        });
     
         test('Test to enter current address', async ({ page }) => {
             await page.goto('https://demoqa.com');
@@ -44,7 +44,8 @@ test.describe('Test suite for text input actions', () => {
             //getByPlaceholder
             await page.getByPlaceholder('Current Address').click();
             await page.getByPlaceholder('Current Address').fill('ABC, 1000 - Skopje');
-});
+        });
+
         test('Test to enter permanent address', async ({ page }) => {
             await page.goto('https://demoqa.com');
             await page.getByText('Elements').click();
@@ -58,7 +59,8 @@ test.describe('Test suite for text input actions', () => {
              //getByPlaceholder
             await page.locator('#permanentAddress').click();
             await page.locator('#permanentAddress').fill('DEF, 1000 - Skopje');
-});
+        });
+        
         test('Fill all text fields and click "Submit" button', async ({ page }) => {
             await page.goto('https://demoqa.com');
             await page.getByText('Elements').click();
@@ -73,7 +75,7 @@ test.describe('Test suite for text input actions', () => {
             await page.locator('#permanentAddress').fill('DEF, 1000 - Skopje');
             //getByRole
             await page.getByRole('button', {name: 'Submit'}).click();
-});
+        });
 
         
     });

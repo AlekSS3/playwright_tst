@@ -18,4 +18,5 @@ test.describe('Test suite for checkbox actions', () => {
     await page.getByLabel('Collapse all').click(); // Then collapse them
   });
 
+
 });

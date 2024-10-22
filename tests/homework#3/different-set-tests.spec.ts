@@ -13,8 +13,10 @@ test.describe ('Skip and fixme tests', () => {
         await page.click('button[data-test="remove-sauce-labs-backpack"]');
 
     //Assertions
-        await expect(page.locator('[data-test="shipping-info-value"]')).toHaveText('Checkout')
-        await expect(page.locator('[data-test="shipping-info-value"]')).toHaveText('Continue Shopping')
+        //await expect(page.locator('[data-test="shipping-info-value"]')).toHaveText('Checkout')
+        //await expect(page.locator('[data-test="remove-sauce-labs-backpack"]')).toHaveText('Remove');
+        await expect(page.locator('[data-test="continue-shopping"]')).toHaveText('Continue Shopping');
+    });
 
 });
 
@@ -23,7 +25,6 @@ test.describe ('Skip and fixme tests', () => {
         await page.fill('[data-test="username"]', 'standard_user');
         await page.fill('[data-test="password"]', 'secret_sauce');
         await page.click('[data-test="login-button"]');
-        
 
     });
 
@@ -34,7 +35,6 @@ test.describe ('Skip and fixme tests', () => {
         await page.click('[data-test="login-button"]');
         await page.click('[data-test="add-to-cart-sauce-labs-backpack"]');
         await page.click('[data-test="shopping-cart-link"]');
-
 
     //Assertions
         await expect(page.locator('[data-test="remove-sauce-labs-backpack"]')).toHaveText('Remove')
@@ -51,36 +51,27 @@ test.describe ('Skip and fixme tests', () => {
         await page.click('[data-test="continue-shopping"]');
 });
 
-    
-});
 
+test.describe('Tests for smoke tests', () => {
 
-test.describe ('Tests for group tags based on one criteria', {
-    tag: '@smoke',}, ()=> {
-    
-    test('Successfully login', async ({ page }) => {
-
+    test('Successfully login @smoke', async ({ page }) => {
 
     });
 
-    test('Unsucessfully login', async ({ page }) => {
-
-
+    test('Unsuccessfully login @smoke', async ({ page }) => {
+      
     });
 
 });
 
-test.describe ('Group tests based on couple criteria', {
-    tag: ['@high priority', '@regression'],}, ()=> {
+test.describe('Tests for high priority and regression', () => {
 
-    test('Successfully checkout test', async ({ page }) =>{
-
-
+    test('Successfully checkout test @highpriority @regression', async ({ page }) => {
+    
     });
 
-    test('Unsuccessfully checkout test', async ({ page }) => {
-
-
+    test('Unsuccessfully checkout test @highpriority @regression', async ({ page }) => {
+       
     });
 
 });

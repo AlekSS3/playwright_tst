@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test';
 
 
-test.describe ('Skip and fixeme tests', () => {
+test.describe ('Skip and fixme tests', () => {
 
 test.skip('Skip test for add and remove a product',async ({ page }) => {
     await page.goto('/');

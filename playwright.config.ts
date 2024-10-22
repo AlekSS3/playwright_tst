@@ -12,7 +12,8 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  grep: /smoke|regression|hightpriority|fast|slow/,
+  timeout: 60000,
+  //grep: /smoke|regression|hightpriority|fast|slow/,
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,

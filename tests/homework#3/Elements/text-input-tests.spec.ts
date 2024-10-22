@@ -11,13 +11,13 @@ test.describe('Test suite for text input actions', () => {
         });
 
         test('Test to enter full name', async ({ page }) => {
-        await page.goto('https://demoqa.com');
-        await page.getByText('Elements').click();
-        await page.getByText('Text Box').click();
+            await page.goto('https://demoqa.com');
+            await page.getByText('Elements').click();
+            await page.getByText('Text Box').click();
 
-            //getByPlaceholder
-        await page.getByPlaceholder('Full Name').click();
-        await page.getByPlaceholder('Full Name').fill('Aleks Stef');
+                //getByPlaceholder
+            await page.getByPlaceholder('Full Name').click();
+            await page.getByPlaceholder('Full Name').fill('Aleks Stef');
 
         });
 

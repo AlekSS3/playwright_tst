@@ -1,8 +1,6 @@
-    import { test } from '@playwright/test';
+    import { test, expect } from '@playwright/test';
 
 test.describe('Test suite for text input actions', () => {
-  
-  
   test.beforeEach(async ({ page }) => {
     await page.goto('https://demoqa.com');
     await page.getByText('Elements').click();

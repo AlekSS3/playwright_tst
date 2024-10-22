@@ -13,6 +13,7 @@ test.describe('Validations for e-commerc flows', () => {
         await page.locator('[data-test="login-button"]').click();
             
         // Assertions
+
         await expect(page.locator('[data-test="title"]')).toContainText('Products');
         await expect(page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]')).toContainText('Add to cart');
         const buttonText = await page.locator('[data-test="add-to-cart-sauce-labs-bike-light"]').textContent();
@@ -70,6 +71,7 @@ test.describe('Validations for e-commerc flows', () => {
         await page.locator('[data-test="postalCode"]').fill('1000');
             
         // Assertions
+
         await expect(page.getByText('Swag Labs')).toBeVisible();
         await expect(page.locator('[data-test="continue"]')).toContainText('Continue');
         await expect(page.locator('[data-test="continue"]')).toBeEnabled();
@@ -110,6 +112,7 @@ test.describe('Validations for e-commerc flows', () => {
 
             
         // Assertions
+
         await expect(page.getByText('Swag Labs')).toBeVisible();
         await expect(page.locator('[data-test="title"]')).toBeVisible();
         await expect(page.locator('[data-test="title"]')).toContainText('Checkout: Overview');
@@ -148,6 +151,7 @@ test.describe('Validations for e-commerc flows', () => {
 
             
         // Assertions
+
         await expect(page.getByText('Swag Labs')).toBeVisible();
         await expect(page.locator('[data-test="title"]')).toContainText('Checkout: Complete!');
         //Alternative
@@ -158,7 +162,7 @@ test.describe('Validations for e-commerc flows', () => {
         //Alternative
         const completeText = await page.locator('[data-test="complete-text"]').textContent();
         expect(completeText).toMatch('Your order has been dispatched');
-        await expect(page.locator('[data-test="back-to-products"]')).toBeEnabled('Back Home');
+        await expect(page.locator('[data-test="back-to-products"]')).toBeEnabled();
     });
 
 

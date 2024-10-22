@@ -42,7 +42,6 @@ test.fixme('Remove added product and continue with shopping', async ({ page }) =
     await page.click('[data-test="continue-shopping"]');
 
     //Assertion
-   // await expect(page.)
 
 });
 

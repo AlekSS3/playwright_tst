@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Test suite for accordian', () => {
+test.describe('Test suite for date picker', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto('https://demoqa.com');
         await page.getByRole('heading', { name: 'Widgets' }).click();

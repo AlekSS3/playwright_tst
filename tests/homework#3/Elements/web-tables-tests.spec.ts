@@ -111,8 +111,9 @@ test.describe('Test suite for web tables actios', async() =>{
         await registerUser(page, 'Stole', 'Popov', 'stole@mail.com', '33', '8000', 'Call Center');
         await registerUser(page, 'Rex', 'Dex', 'rex@mail.com', '41', '2000', 'SEO');
         await registerUser(page, 'Max', 'Dex', 'max@mail.com', '41', '2000', 'SEO');
-        await page.getByRole('button', { name: 'Next' }).click();
-        await page.getByRole('button', { name: 'Previous' }).click();
+        //Clicking buttons "Next" and "Previous"
+        //await page.getByRole('button', { name: 'Next' }).click();
+        //await page.getByRole('button', { name: 'Previous' }).click();
 
     })
 

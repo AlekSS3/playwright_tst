@@ -16,7 +16,7 @@ test('Test for multiple color names', async ({ page }) => {
     await page.getByText('Green', { exact: true }).click();
     
     
-    //Assertion
+    //Assertions
     await expect(page.getByText('Red')).toBeVisible();
     await expect(page.getByText('Green', { exact: true })).toBeVisible();
   

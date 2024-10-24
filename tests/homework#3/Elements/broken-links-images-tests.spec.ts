@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 
-test.describe('Test suite for clicking links', () => {
+test.describe('Test suite for valid and broken links and images', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto('https://demoqa.com');
         await page.getByText('Elements').click();
@@ -21,7 +21,6 @@ test.describe('Test suite for clicking links', () => {
 
             //Assertion
             await expect(page.getByText('This page returned a 500')).toBeVisible();
-        
 
     });
 

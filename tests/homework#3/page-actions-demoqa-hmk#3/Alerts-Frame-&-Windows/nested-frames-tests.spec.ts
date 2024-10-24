@@ -9,6 +9,15 @@ test.describe('Test suite for nested frames', () => {
 
 });
 
+    test('Test for veryfing presence of parent frame and nested frame on the webpage', async ({ page }) => {
+        const parentFrame = page.frameLocator('#frame1');
+        const nestedFrame = parentFrame.frameLocator('#frame2');
+        
+        //Assertions:
+        await expect(parentFrame).toBeDefined();
+        await expect(nestedFrame).toBeDefined();
+    });
+
     test('Testing content inside the parent and nested frames on the webpage', async ({ page }) => {
         const parentFrame = page.frameLocator('#frame1');
         const childFrame = parentFrame.frameLocator('iframe');

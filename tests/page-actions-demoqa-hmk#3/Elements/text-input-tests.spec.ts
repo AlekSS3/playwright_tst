@@ -1,4 +1,4 @@
-    import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 test.describe('Test suite for text input actions', () => {
   test.beforeEach(async ({ page }) => {

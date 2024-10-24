@@ -16,9 +16,7 @@ test.describe('Test suite for dynamic properties', () => {
 
         test('', async ({ page }) => {
             await page.getByRole('button', { name: 'Color Change' }).click();
-            
     });
-
 
 
 });

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Test suite for nested frames', () => {
+test.describe('Test suite for modal dialogues', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://demoqa.com');
     await page.getByRole('heading', { name: 'Alerts, Frame & Windows' }).click();

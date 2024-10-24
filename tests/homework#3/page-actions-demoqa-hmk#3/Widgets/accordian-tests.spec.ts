@@ -1,28 +1,45 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Test suite for nested frames', () => {
+test.describe('Test suite for accordian', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://demoqa.com');
-    await page.getByRole('heading', { name: 'Alerts, Frame & Windows' }).click();
-    await page.getByText('Modal Dialogs').click();
+    await page.getByRole('heading', { name: 'Widgets' }).click();
+    await page.getByText('Accordian').click();
 
 });
 
-test('Test to very displaying of small modal', async ({ page }) => {
-    await page.getByRole('button', { name: 'Small modal' }).click();
-    await page.getByText('This is a small modal. It has').click();
-    //click button "Close"
-    await page.locator('#closeSmallModal').click();
-    
+test('Test to collapse and expand first accordian on the webpage', async ({ page }) => {
+    //Collapse first accordian
+    await page.getByText('What is Lorem Ipsum?').click(); 
+    await page.getByText('What is Lorem Ipsum?').click();
+
     //Assertion
-    await expect(page.getByText('This is a small modal. It has very less content')).toBeVisible();
+    await expect(page.getByText('Lorem Ipsum is simply dummy')).toBeVisible(); 
+
 });
 
-test('T', async ({ page }) => {
-    
-    
+test('Test to collapse and expand second accordian on the webpage', async ({ page }) => {
+    //Expand first accordian
+    await page.getByText('Where does it come from?').click();
+    await page.getByText('Contrary to popular belief,').click();
+    //Collapse second accordian
+    await page.getByText('Where does it come from?').click();
+
     //Assertion
-    
+    await expect(page.getByText('Contrary to popular belief')).toBeVisible(); 
+
+});
+
+test('Test to collapse and expand third accordian on the webpage', async ({ page }) => {
+    //Expand third accordian
+    await page.getByText('Why do we use it?').click();
+    await page.getByText('It is a long established fact').click();
+    //Collapse second accordian
+    await page.getByText('Why do we use it?').click();
+
+    //Assertion
+    await expect(page.getByText('It is a long established fact')).toBeVisible(); 
+
 });
 
 

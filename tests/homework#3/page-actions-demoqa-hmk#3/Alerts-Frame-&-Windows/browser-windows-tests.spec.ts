@@ -29,7 +29,7 @@ test.describe('Test suite for browser windows', () => {
     });
 
 
-    test('Test for clicking button "New Window Message', async ({ page }) => {
+    test('Test for clicking button "New Window Message"', async ({ page }) => {
         const page4Promise = page.waitForEvent('popup');
         await page.getByRole('button', { name: 'New Window Message' }).click();
         const page4 = await page4Promise;

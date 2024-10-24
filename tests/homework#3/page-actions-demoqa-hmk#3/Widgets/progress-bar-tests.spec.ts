@@ -1,25 +1,31 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Test suite for accordian', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('https://demoqa.com');
-    await page.getByRole('heading', { name: 'Alerts, Frame & Windows' }).click();
-    
+test.describe('Test suite for progress bar', () => {
+    test.beforeEach(async ({ page }) => {
+        await page.goto('https://demoqa.com');
+        await page.getByRole('heading', { name: 'Widgets' }).click();
+        await page.getByText('Progress Bar').click();
 
-});
+    });
 
-test('', async ({ page }) => {
+    test('Test Single Stop on Progress Bar', async ({ page }) => {
+        await page.getByRole('button', { name: 'Start' }).click();
+        await page.getByRole('button', { name: 'Stop' }).click();
     
-    //Assertion
   
-});
+    });
 
-test('T', async ({ page }) => {
+    test('Testing Multiple Stops in Progress Bar', async ({ page }) => {
+        await page.getByRole('button', { name: 'Start' }).click();
+        await page.getByRole('button', { name: 'Stop' }).click();
+        await page.getByRole('button', { name: 'Start' }).click();
+        await page.getByRole('button', { name: 'Stop' }).click();
+        await page.getByRole('button', { name: 'Start' }).click();
+        await page.getByRole('button', { name: 'Stop' }).click();
+        await page.getByRole('button', { name: 'Start' }).click();
+        await page.getByRole('button', { name: 'Stop' }).click();
     
-    
-    //Assertion
-    
-});
+    });
 
 
 

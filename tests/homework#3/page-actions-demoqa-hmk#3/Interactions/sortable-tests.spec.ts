@@ -67,7 +67,6 @@ import { test, expect } from '@playwright/test';
             //await page.click('#demo-tab-grid');
             await page.getByRole('tab', { name: 'Grid' }).click();
 
-    
             const itemOne = page.locator('.vertical-list-container .list-group-item', { hasText: 'One' });
             const itemFive = page.locator('.vertical-list-container .list-group-item', { hasText: 'Five' });
             await itemOne.dragTo(itemFive);

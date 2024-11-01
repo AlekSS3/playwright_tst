@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-    test.describe('Test suite for sorting of items', () => {
+    test.describe('Test suite for sortable interactions', () => {
         test.beforeEach(async ({ page }) => {
             await page.goto('https://demoqa.com');
             await page.getByRole('heading', { name: 'Interactions' }).click();

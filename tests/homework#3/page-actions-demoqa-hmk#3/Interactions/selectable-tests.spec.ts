@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-    test.describe('Test suite for selectable items', () => {
+    test.describe('Test suite for selectable interactions', () => {
         test.beforeEach(async ({ page }) => {
             await page.goto('https://demoqa.com');
             await page.getByRole('heading', { name: 'Interactions' }).click();
@@ -61,6 +61,7 @@ import { test, expect } from '@playwright/test';
             await page.getByText('Nine').click();
 
         });
+
 
         test('Test for selecting and unselecting all items from the grid', async ({ page }) => {
             await page.getByRole('tab', { name: 'Grid' }).click();

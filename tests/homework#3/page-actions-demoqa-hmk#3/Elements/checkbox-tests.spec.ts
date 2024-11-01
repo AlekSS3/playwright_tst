@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+import { CheckboxPage } from './pages/checkbox-page';
+
 test.describe('Test suite for checkbox actions', () => {
 
   test.beforeEach(async ({ page }) => {
@@ -11,11 +13,18 @@ test.describe('Test suite for checkbox actions', () => {
 
   test('Test to expand all check boxes', async ({ page }) => {
     await page.getByLabel('Expand all').click();
+    //const checkboxPage = new CheckboxPage (page);
+    //await checkboxPage.clickExpandButton();
+
   });
 
   test('Test to collapse all check boxes', async ({ page }) => {
     await page.getByLabel('Expand all').click(); // Expand all checkboxes first
     await page.getByLabel('Collapse all').click(); // Then collapse them
+    //const checkboxPage = new CheckboxPage (page);
+    //await checkboxPage.clickExpandButton();
+    //await checkboxPage.clickCollapseButton();
+
   });
 
   test('@slow test to check folders under "Home"', async ({ page }) => {
@@ -23,7 +32,10 @@ test.describe('Test suite for checkbox actions', () => {
     await page.getByLabel('Toggle').click();
     //Check folders under "Home"
     await page.locator('label').filter({ hasText: 'Home' }).getByRole('img').first().click();
-  
+    //const checkboxPage = new CheckboxPage (page);
+    //await checkboxPage.clickToggleButton();
+    //await checkboxPage.clickHomeButton();
+
   });
 
   test('@slow test to uncheck folders under "Home"', async ({ page }) => {
@@ -33,6 +45,11 @@ test.describe('Test suite for checkbox actions', () => {
     await page.locator('label').filter({ hasText: 'Home' }).getByRole('img').first().click();
     //Uncheck folders under "Home"
     await page.locator('label').filter({ hasText: 'Home' }).locator('path').first().click();
+    //const checkboxPage = new CheckboxPage (page);
+    //await checkboxPage.clickToggleButton();
+    //await checkboxPage.clickHomeButton();
+     //await checkboxPage.clickHomeButton();
+
   });
 
   test('@slow test for check and uncheck folders under "Home" previosly checked and expand the toggle', async ({ page }) => {
@@ -42,6 +59,12 @@ test.describe('Test suite for checkbox actions', () => {
     await page.getByLabel('Toggle').click();
     //Ucheck folders under "Home"
     await page.locator('label').filter({ hasText: 'Home' }).locator('path').first().click();
+    //const checkboxPage = new CheckboxPage (page);
+    //await checkboxPage.clickTreeButton();
+    //await checkboxPage.clickToggleButton();
+    //await checkboxPage.clickHomeButton();
+   
+
   });
 
   test('@fast test for check separate folders', async ({ page }) => {
@@ -58,6 +81,12 @@ test.describe('Test suite for checkbox actions', () => {
     await page.locator('label').filter({ hasText: 'Downloads' }).getByRole('img').first().click();
     //Checked all folders under "Downloads"
     await page.locator('label').filter({ hasText: 'Documents' }).getByRole('img').first().click();
+    //const checkboxPage = new CheckboxPage (page);
+   // await checkboxPage.clickToggleButton();
+   // await checkboxPage.clickDesktopToggle();
+   // await checkboxPage.clickDocumentsToggle();
+   // await checkboxPage.clickDownloadsToggle();
+  
 
 });
 

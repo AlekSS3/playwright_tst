@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 
-test.describe('Validations for e-commerc flows', () => {
+test.describe('Validations for e-commerce flows', () => {
 
     test.beforeEach(async ({ page }) => {
             await page.goto('https://www.saucedemo.com/');

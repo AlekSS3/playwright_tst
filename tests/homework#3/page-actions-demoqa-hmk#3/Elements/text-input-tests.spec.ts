@@ -3,7 +3,7 @@ import * as fs from 'fs';
 
 const userInfo = JSON.parse(fs.readFileSync('../playwright-tst/tests/fixtures/data/userInfo.json', 'utf-8'));
 
-import { TextBoxPage } from './pages/text-input.page';
+import { TextBoxPage } from './pages/text-input-page';
 
 test.describe('Test suite for text input actions', () => {
   test.beforeEach(async ({ page }) => {

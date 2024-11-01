@@ -34,15 +34,15 @@ test.describe('Test suite for radio button actions', () => {
     });
         
     test('Test for multiple clicks on radio buttons', async ({ page }) => {
-        //await page.getByText('Yes').click();
-        //await page.getByText('Impressive').click();
-        //await page.getByText('Yes').click();
-        //await page.getByText('Impressive').click();
+        await page.getByText('Yes').click();
+        await page.getByText('Impressive').click();
+        await page.getByText('Yes').click();
+        await page.getByText('Impressive').click();
         const radioButtonsPage = new RadioButtonsPage (page);
-        await radioButtonsPage.clickRadioButtonYes();
-        await radioButtonsPage.clickRadioButtonYes();
-        await radioButtonsPage.clickRadioButtonYes();
-        await radioButtonsPage.clickRadioButtonYes();
+        //await radioButtonsPage.clickRadioButtonYes();
+        //await radioButtonsPage.clickRadioButtonYes();
+        //await radioButtonsPage.clickRadioButtonYes();
+        //await radioButtonsPage.clickRadioButtonYes();
     });
 
 

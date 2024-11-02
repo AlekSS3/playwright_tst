@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+import { MenuPage } from './pages/menu-pages';
+
     test.describe('Test suite for Menu', () => {
         test.beforeEach(async ({ page }) => {
             await page.goto('https://demoqa.com');
@@ -10,6 +12,8 @@ import { test, expect } from '@playwright/test';
 
         test('Test for clicking Main Item 1', async ({ page }) => {
             await page.getByRole('link', { name: 'Main Item 1' }).click();
+            //const menuPage = new MenuPage(page);
+            //await menuPage.clickMainItem1();
 
             //Assertion
             await expect(page.getByRole('link', { name: 'Main Item 1' })).toHaveText('Main Item 1');
@@ -25,6 +29,10 @@ import { test, expect } from '@playwright/test';
             await page.getByRole('link', { name: 'Main Item 2' }).hover();
             await page.getByRole('link', { name: 'SUB SUB LIST »' }).hover();
             await page.getByRole('link', { name: 'Sub Sub Item 2' }).click();
+            //const menuPage = new MenuPage(page);
+           // await menuPage.clickMainItem2(); 
+           // await menuPage.clickSubSubItem1();
+           // await menuPage.clickSubSubItem2();
 
             //Assertions
             await expect(page.getByRole('link', { name: 'Main Item 2' })).toHaveText('Main Item 2');
@@ -35,6 +43,8 @@ import { test, expect } from '@playwright/test';
 
         test('Test for clicking Main Item 3', async ({ page }) => {
             await page.getByRole('link', { name: 'Main Item 3' }).click();
+            //const menuPage = new MenuPage(page);
+            //await menuPage.clickMainItem3(); 
 
             //Assertion
             await expect(page.getByRole('link', { name: 'Main Item 3' })).toHaveText('Main Item 3');

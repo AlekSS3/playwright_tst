@@ -26,6 +26,7 @@ export class WebTablesPage{
     readonly emailBtn: Locator;
     readonly salaryBtn: Locator;
     readonly departmentBtn: Locator;
+    readonly removeBtn: Locator;
 
 
     constructor (page:Page){
@@ -50,6 +51,7 @@ export class WebTablesPage{
         this.emailBtn = page.locator('.rt-resizable-header-content', { hasText: 'Email' });
         this.salaryBtn = page.locator('.rt-resizable-header-content', { hasText: 'Salary' });
         this.departmentBtn = page.locator('.rt-resizable-header-content', { hasText: 'Department' });
+        this.removeBtn = page.locator('//path[@d="M864 256H736v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zm-200 0H360v-72h304v72z"]');
 
     }
 
@@ -135,6 +137,10 @@ export class WebTablesPage{
    
     async clickDepartmentBtn(){
         await this.departmentBtn.click();
+    }
+
+    async clickRemoveBtn(){
+        await this.removeBtn.click();
     }
     
 }

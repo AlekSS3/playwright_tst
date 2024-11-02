@@ -69,40 +69,59 @@ test.describe('Test suite for web tables actios', async() =>{
     });
     test('Test for deleting registration form', async ({ page }) => {
         await page.locator('#delete-record-1 path').click();
+        //const webTablesPage = new WebTablesPage(page);
+       // await webTablesPage.clickRemoveBtn();
     });
 
     test.describe('Column Ordering Tests', () => {
 
         test('Test for ordering column "First Name" in ascending and descending order', async ({ page }) => {
-            //await page.getByText('First Name').click();
-            //await page.getByRole('columnheader', { name: 'First Name' }).click();
-            const webTablesPage = new WebTablesPage(page);
-            await webTablesPage.clickFirstNameBtn();
+            await page.getByText('First Name').click();
+            await page.getByRole('columnheader', { name: 'First Name' }).click();
+            //const webTablesPage = new WebTablesPage(page);
+            //await webTablesPage.clickFirstNameBtn();
+            //await webTablesPage.clickFirstNameBtn();
         });
     
         test('Test for ordering column "Last Name" in ascending and descending order', async ({ page }) => {
             await page.getByText('Last Name').click();
             await page.getByText('Last Name').click();
+            //const webTablesPage = new WebTablesPage(page);
+            //await webTablesPage.clickLastNameBtn();
+            //await webTablesPage.clickLastNameBtn();
         });
     
         test('Test for ordering column "Age" in ascending and descending order', async ({ page }) => {
             await page.getByText('Age', { exact: true }).click();
             await page.getByText('Age', { exact: true }).click();
+            //const webTablesPage = new WebTablesPage(page);
+            //await webTablesPage.clickAgeBtn();
+            //await webTablesPage.clickAgeBtn();
         });
     
         test('Test for ordering column "Email" in ascending and descending order', async ({ page }) => {
             await page.getByText('Email').click();
             await page.getByRole('columnheader', { name: 'Email' }).click();
+             //const webTablesPage = new WebTablesPage(page);
+             //await webTablesPage.clickEmailBtn();
+             //await webTablesPage.clickEmailBtn();
         });
     
         test('Test for ordering column "Salary" in ascending and descending order', async ({ page }) => {
             await page.getByText('Salary').click();
             await page.getByRole('columnheader', { name: 'Salary' }).click();
+            //const webTablesPage = new WebTablesPage(page);
+             //await webTablesPage.clickSalaryBtn();
+             //await webTablesPage.clickSalaryBtn();
+            
         });
     
         test('Test for ordering column "Department" in ascending and descending order', async ({ page }) => {
             await page.getByText('Department').click();
             await page.getByRole('columnheader', { name: 'Department' }).click();
+            //const webTablesPage = new WebTablesPage(page);
+             //await webTablesPage.clickDepartmentBtn();
+             //await webTablesPage.clickDepartmentBtn();
         });
     });
 

@@ -1,4 +1,9 @@
 import { test, expect } from '@playwright/test';
+import * as fs from 'fs';
+
+const colors = JSON.parse(fs.readFileSync('../playwright-tst/tests/fixtures/data/colors.json', 'utf-8'));
+
+import { AutoCompletePage } from './pages/auto-complete-pages';
 
 test.describe('Test suite for autocompletion', () => {
   test.beforeEach(async ({ page }) => {
@@ -14,6 +19,11 @@ test('Test for multiple color names', async ({ page }) => {
     await page.getByText('Red', { exact: true }).click();
     await page.locator('#autoCompleteMultipleInput').fill('g');
     await page.getByText('Green', { exact: true }).click();
+    //const autoCompletePage = new AutoCompletePage(page);
+    //await autoCompletePage.clickInputField();
+    //await autoCompletePage.typeInputField1(colors.colorOne);
+    //await page.waitForSelector('.auto-complete__option');
+
     
     
     //Assertions

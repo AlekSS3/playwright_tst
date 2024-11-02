@@ -40,13 +40,13 @@ test('Test to collapse and expand second accordian on the webpage', async ({ pag
 
 test('Test to collapse and expand third accordian on the webpage', async ({ page }) => {
     //Expand third accordian
-    //await page.getByText('Why do we use it?').click();
-    //await page.getByText('It is a long established fact').click();
+    await page.getByText('Why do we use it?').click();
+    await page.getByText('It is a long established fact').click();
     //Collapse third accordian
-    //await page.getByText('Why do we use it?').click();
-    const widgetsPage = new WidgetsPage(page);
-    await widgetsPage.clickAccordianThree();
-    await widgetsPage.clickAccordianThree();
+    await page.getByText('Why do we use it?').click();
+    //const widgetsPage = new WidgetsPage(page);
+    //await widgetsPage.clickAccordianThree();
+    //await widgetsPage.clickAccordianThree();
 
     //Assertion
     await expect(page.getByText('It is a long established fact')).toBeVisible(); 

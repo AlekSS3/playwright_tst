@@ -26,10 +26,10 @@ test.describe('Test suite for download and uploading files', () => {
     });
 
         test('Test for uploading file', async ({ page }) => {
-           // await page.getByLabel('Select a file').click();
-            //await page.getByLabel('Select a file').setInputFiles('/Users/aleksandra/Group1Playwright');
-            const uploadPage = new UploadPage(page);
-             await uploadPage.clickUploadBtn();
+            await page.getByLabel('Select a file').click();
+            await page.getByLabel('Select a file').setInputFiles('/Users/aleksandra/Group1Playwright');
+            //const uploadPage = new UploadPage(page);
+            //await uploadPage.clickUploadBtn();
 
             //Assertion
             await expect(page.getByText('C:\\fakepath\\Group1Playwright')).toBeVisible();

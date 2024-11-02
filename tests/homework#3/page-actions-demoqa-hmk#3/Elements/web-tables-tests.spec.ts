@@ -1,5 +1,10 @@
 import {test, expect} from '@playwright/test';
 import exp from 'constants';
+import * as fs from 'fs';
+const register = JSON.parse(fs.readFileSync('../playwright-tst/tests/fixtures/data/register.json', 'utf-8'));
+
+import { WebTablesPage } from './pages/web-tables-pages';
+
 
 test.describe('Test suite for web tables actios', async() =>{
     test.beforeEach(async ({ page }) => {
@@ -9,28 +14,44 @@ test.describe('Test suite for web tables actios', async() =>{
     });
 
     test('Test the "search" field', async ({ page }) => {
-        await page.getByPlaceholder('Type to search').click();
-        await page.getByPlaceholder('Type to search').fill('Cierra');
+          await page.getByPlaceholder('Type to search').click();
+          await page.getByPlaceholder('Type to search').fill('Cierra');
+       // const webTablesPage = new WebTablesPage(page);
+       // await webTablesPage.clickSearchBtn();
+       // await webTablesPage.typeSearchBtn(register.searchBtn);
     });
 
     test('Test the "Add" button', async ({ page }) => {
         await page.getByRole('button', { name: 'Add' }).click();
+        //const webTablesPage = new WebTablesPage(page);
+        //await webTablesPage.clickAddBtn();
     });
 
     test('Test the "Registration Form"', async ({ page }) => {
-        await page.getByRole('button', { name: 'Add' }).click();
-        await page.getByPlaceholder('First Name').click();
-        await page.getByPlaceholder('First Name').fill('Aleks');
-        await page.getByPlaceholder('Last Name').click();
-        await page.getByPlaceholder('Last Name').fill('Stef');
-        await page.getByPlaceholder('name@example.com').click();
-        await page.getByPlaceholder('name@example.com').fill('aleks@mail.com');
-        await page.getByPlaceholder('Age').click();
-        await page.getByPlaceholder('Age').fill('41');
-        await page.getByPlaceholder('Salary').click();
-        await page.getByPlaceholder('Salary').fill('2000');
-        await page.getByPlaceholder('Department').click();
-        await page.getByPlaceholder('Department').fill('Quality Assurance');
+          await page.getByRole('button', { name: 'Add' }).click();
+          await page.getByPlaceholder('First Name').click();
+          await page.getByPlaceholder('First Name').fill('Aleks');
+          await page.getByPlaceholder('Last Name').click();
+          await page.getByPlaceholder('Last Name').fill('Stef');
+          await page.getByPlaceholder('name@example.com').click();
+          await page.getByPlaceholder('name@example.com').fill('aleks@mail.com');
+          await page.getByPlaceholder('Age').click();
+          await page.getByPlaceholder('Age').fill('41');
+          await page.getByPlaceholder('Salary').click();
+          await page.getByPlaceholder('Salary').fill('2000');
+          await page.getByPlaceholder('Department').click();
+          await page.getByPlaceholder('Department').fill('Quality Assurance');
+        //const webTablesPage = new WebTablesPage(page);
+        //await webTablesPage.clickAddBtn();
+       // await webTablesPage.clickFirstName();
+        //await webTablesPage.typeFirstName(register.firstName);
+       // await webTablesPage.clickAge1();
+        //await webTablesPage.typeAge(register.age);
+        //await webTablesPage.clickSalary();
+        //await webTablesPage.typeSalary(register.salary);
+        //await webTablesPage.clickDepartment();
+        //await webTablesPage.typeDepartment(register.department);
+       // await webTablesPage.clickSubmitBtn();
     });
 
     test('Test for edit registration form', async ({ page }) => {
@@ -53,8 +74,10 @@ test.describe('Test suite for web tables actios', async() =>{
     test.describe('Column Ordering Tests', () => {
 
         test('Test for ordering column "First Name" in ascending and descending order', async ({ page }) => {
-            await page.getByText('First Name').click();
-            await page.getByRole('columnheader', { name: 'First Name' }).click();
+            //await page.getByText('First Name').click();
+            //await page.getByRole('columnheader', { name: 'First Name' }).click();
+            const webTablesPage = new WebTablesPage(page);
+            await webTablesPage.clickFirstNameBtn();
         });
     
         test('Test for ordering column "Last Name" in ascending and descending order', async ({ page }) => {

@@ -12,8 +12,6 @@ export class WidgetsPage{
         this.accordianOne = page.locator('//div[@id="section1Heading" and contains(text(), "What is Lorem Ipsum?")]');
         this.accordianTwo = page.locator('//div[@id="section2Heading" and contains(text(), "Where does it come from?")]');
         this.accordianThree = page.locator('//div[@id="section3Heading" and contains(text(), "Why do we use it?")]');
-        //please create a locator by id: <div class="card-header" id="section2Heading">Where does it come from?</div>
-        //<div class="card-header" id="section3Heading">Why do we use it?</div>
     }
 
     async goto(){

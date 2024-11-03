@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+import { FramesPage } from './pages/frames-pages';
+
 test.describe('Test suite for frames', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://demoqa.com');
@@ -11,6 +13,8 @@ test.describe('Test suite for frames', () => {
     test('Testing presence of two framse on the webpage', async ({ page }) => {
         await expect(page.frameLocator('#frame1')).toBeDefined();
         await expect(page.frameLocator('#frame2')).toBeDefined();
+        const framesPage = new FramesPage(page);
+        await framesPage.frameOne();
     });
 
     test('Testing content inside the two frames on the webpage', async ({ page }) => {

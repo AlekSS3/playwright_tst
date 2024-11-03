@@ -40,6 +40,12 @@ test.describe('Test suite for bookstore application', () => {
         await page.getByPlaceholder('Password').click();
         await page.getByPlaceholder('Password').fill('1234568910');
         await page.getByRole('button', { name: 'Login' }).click();
+        
+        //const loginPage = new LoginPage(page);
+        //await loginPage.enterUserName(bookUser.username);
+        //await loginPage.enterPassword(bookUser.password);
+        //await loginPage.clickLoginBtn();
+
     });
 
 

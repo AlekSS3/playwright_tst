@@ -14,7 +14,6 @@ export class LoginPage{
     readonly registerBtn: Locator;
     readonly loginLink: Locator;
     readonly registerLink: Locator;
-    readonly loginBtn: Locator;
     
 
    
@@ -29,8 +28,6 @@ export class LoginPage{
         this.registerBtn = page.locator('#register');
         this.loginLink = page.locator('a[href="/login"]');
         this.registerLink = page.locator('a[href="/register"]');
-        this.loginBtn = page.locator('#login');
-       
        
     }
 
@@ -69,9 +66,4 @@ export class LoginPage{
     async clickRegisterLink(){
         await this.clickRegisterLink();
     }
-
-    async clickLoginBtn(){
-        await this.clickLoginBtn();
-    }
 }
-

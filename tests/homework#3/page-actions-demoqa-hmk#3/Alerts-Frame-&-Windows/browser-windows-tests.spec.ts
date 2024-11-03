@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+import { BrowserWindowPage } from './pages/browser-windows-pages';
+
 test.describe('Test suite for browser windows', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://demoqa.com');
@@ -11,6 +13,9 @@ test.describe('Test suite for browser windows', () => {
         const page1Promise = page.waitForEvent('popup');
         await page.getByRole('button', { name: 'New Tab' }).click();
         const page1 = await page1Promise;
+        //const browserWIndowPage = new BrowserWindowPage(page);
+        //await browserWIndowPage.clickNewTab();
+
 
         //Assertion
         await expect(page1.getByRole('heading', { name: 'This is a sample page' })).toBeVisible();
@@ -21,6 +26,8 @@ test.describe('Test suite for browser windows', () => {
         const page2Promise = page.waitForEvent('popup');
         await page.getByRole('button', { name: 'New Window', exact: true }).click();
         const page2 = await page2Promise;
+        //const browserWIndowPage = new BrowserWindowPage(page);
+        //await browserWIndowPage.clickNewWindow();
 
         //Assertion
         await expect(page2.getByRole('heading', { name: 'This is a sample page' })).toBeVisible();
@@ -33,6 +40,8 @@ test.describe('Test suite for browser windows', () => {
         const page4Promise = page.waitForEvent('popup');
         await page.getByRole('button', { name: 'New Window Message' }).click();
         const page4 = await page4Promise;
+        //const browserWIndowPage = new BrowserWindowPage(page);
+        //await browserWIndowPage.clickNewWindowMessage(page);
 
         //Assertion
         await expect(page4.getByText('Knowledge increases by sharing but not by saving. Please share this website with your friends and in your organization.')).toBeVisible();

@@ -10,8 +10,11 @@ export class BrowserWindowPage{
     constructor (page:Page){
         this.page = page;
         this.newTabBtn = page.locator('button', { hasText: 'New Tab' });
+        //this.newTabBtn = page.locator('#tabButton);
         this.newWindowBtn = page.locator('button:has-text("New Window")');
+        //this.newWindowBtn = page.locator('#windowButton);
         this.newWindowMessageBtn = page.locator('button', { hasText: 'New Window Message' });
+        //this.newWindowMessageBtn = page.locator('#messageWindowButton');
         
     }
 
@@ -37,5 +40,5 @@ export class BrowserWindowPage{
             return await pagePromise;
         }
 
-        
+
     }

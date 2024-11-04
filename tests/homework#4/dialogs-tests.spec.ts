@@ -33,7 +33,8 @@ test.describe('Tests for dialogs', () => {
             await expect(page.locator('#confirmResult')).toHaveText('You selected Cancel');
 
     });
-    
+
+
 
 
 })
